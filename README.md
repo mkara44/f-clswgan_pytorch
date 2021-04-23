@@ -17,14 +17,14 @@ The unofficial implementation of [Feature Generating Networks for Zero-Shot Lear
 - `pip install -r requirements.txt`
 
 ## Dataset
-- Animal with Attributes 2 [3] dataset is used. This dataset contains 50 classes with 37322 images. 40 classes are divided to seen classes.
-- Original paper authors has shared the features maps from ResNet101 [4]. These feature maps are used to train networks.
+- Animal with Attributes 2 [3] dataset is used. This dataset contains 50 classes with 37322 images. 40 classes are divided into seen classes.
+- Original paper authors has shared the features maps from ResNet101 [4]. These feature maps are used for training.
 - Seen classes are splitted to train and test sets. `trainval_loc` indexes ares used for training, `test_seen_loc` indexes are used for testing.[4]
-- Unseen classes are not splitted. `test_unseen_loc` indexes are used for both trainin and testing. [4]
+- Unseen classes are not splitted. `test_unseen_loc` indexes are used for both training and testing. [4]
 
 ## Training
-- After running scripts for training, models will be saved to defined path in `config.py`.
-- This command will start to training process without any pretrained models.
+- After training, models will be saved to defined path in `config.py`.
+- Training process without any pretrained models.
     - `python main.py --train`
 - Pretrained models for any part of proposed approach can be used for fine-tuning. 
     - `python main.py --train --g_cls_path <path/to/model>`
