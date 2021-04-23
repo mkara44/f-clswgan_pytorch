@@ -1,3 +1,4 @@
+import torch
 import argparse
 
 # Additional Scripts
@@ -5,7 +6,9 @@ from train import TrainTestPipe
 
 
 def main_pipeline(parser):
-    device = 'cuda:0'
+    device = 'cpu:0'
+    if torch.cuda.is_available():
+        device = 'cuda:0'
 
     ttp = TrainTestPipe(device)
     ttp.load_model(parser.g_cls_path, 'g_cls')
@@ -22,7 +25,7 @@ def main_pipeline(parser):
         print('Projection training process has been started!')
         ttp.train_projection()
 
-    print('Test has been started')
+    print('Test has been started!')
     ttp.test()
 
 

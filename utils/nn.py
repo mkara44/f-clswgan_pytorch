@@ -60,10 +60,3 @@ class Discriminator(nn.Module):
         x = self.fc2(x)
 
         return x
-
-
-if __name__ == '__main__':
-    from config import cfg
-
-    nn = Generator(cfg.attr_number + cfg.latent_dim)
-    print(nn)

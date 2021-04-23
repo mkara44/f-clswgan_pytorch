@@ -18,7 +18,7 @@ cfg.g_cls.epoch = 30
 cfg.g_cls.learning_rate = 1e-4
 cfg.g_cls.model_name = 'g_cls_model_1e4.pt'
 
-# g_cls settings
+# wgan settings
 cfg.wgan = EasyDict()
 cfg.wgan.epoch = 100
 cfg.wgan.n_step = 5
